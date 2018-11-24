@@ -7,9 +7,11 @@
 # All rights reserved - Do Not Redistribute
 #
 
+app = search("aws_opsworks_app").first
+
 bash "install meteor production dependencies" do
   user "ubuntu"
-  cwd "/home/ubuntu/bundle/programs/server"
+  cwd "/var/www/#{app['name']}/bundle/programs/server"
   code <<-EOH
     npm install --production
   EOH
@@ -17,6 +19,6 @@ end
 
 execute "Start Meteor as Node Application with Websockets option defined in Stack Settings" do
 	user "ubuntu"
-	cwd "/home/ubuntu/bundle"
+	cwd "/var/www/#{app['name']}/bundle"
 	command "METEOR_SETTINGS=#{node["METEOR_SETTINGS"]} PORT=#{node["PORT"]} MONGO_URL=#{node["MONGO_URL"]} ROOT_URL=#{node["ROOT_URL"]} MAIL_URL=#{node["MAIL_URL"]} forever start main.js"
 end

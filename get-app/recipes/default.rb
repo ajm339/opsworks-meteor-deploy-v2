@@ -9,9 +9,15 @@
 
 app = search("aws_opsworks_app").first
 
+directory "/var/www/#{app['name']}" do
+  owner 'ubuntu'
+  mode '0777'
+  action :create
+end
+
 bash "remove previous version" do
   user "ubuntu"
-  cwd "/home"
+  cwd "/var/www/#{app['name']}"
   ignore_failure true
   code <<-EOH
     forever stopall
@@ -22,7 +28,7 @@ end
 
 bash "get app and unbundle it" do
   user "ubuntu"
-  cwd "/home"
+  cwd "/var/www/#{app['name']}"
   code <<-EOH
     wget #{app['app_source']['url']}
     tar -zxvf #{app['name']}.tar.gz
