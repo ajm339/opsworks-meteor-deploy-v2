@@ -9,6 +9,12 @@
 
 app = search("aws_opsworks_app").first
 
+directory "/var/www" do
+  owner 'ubuntu'
+  mode '0777'
+  action :create
+end
+
 directory "/var/www/#{app['name']}" do
   owner 'ubuntu'
   mode '0777'
