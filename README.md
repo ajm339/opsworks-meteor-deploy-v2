@@ -4,7 +4,7 @@ opsworks-meteor-deploy Cookbook
 This repository includes cookbooks for deploying and starting a meteor application that has been compiled into a node application on Amazon Web Services Opsworks in a scalable manner.  (Based on AWS Opsworks Chef 12).
 
 
-###Based on deploying a meteor app after running [`meteor build`](http://guide.meteor.com/deployment.html#custom-deployment).  
+### Based on deploying a meteor app after running [`meteor build`](http://guide.meteor.com/deployment.html#custom-deployment).  
 
 <strike>
 1. The first cookbook installs node v0.10.45 follwing [this guide](# Following https://github.com/nodesource/distributions#debinstall).  This is necessary with Meteor 1.3.* because the latest version of Meteor needs node v0.10.41 or greater (but not greater v0.10.4x).  Opsworks with Cheff 11 only supports node v0.10.40 as of May 2016, so the node script is needed to upgrade to node v0.10.45.
@@ -39,9 +39,9 @@ This repository includes cookbooks for deploying and starting a meteor applicati
   1. This cookbook should be called as `meteor-undeploy` in the Undeploy series of Chef recipes for the Node.js layer.
 </strike>
 
-###This is loosely based on the previous iteration of this hosted here: https://github.com/ajm339/opsworks-meteor-deploy
+### This is loosely based on the previous iteration of this hosted here: https://github.com/ajm339/opsworks-meteor-deploy
 
-####Will add more documentation soon.
+#### Will add more documentation soon.
 
 ###### Note 1: You need to build the application for the proper architecture i.e. if you run the command on an OS X machine, but plan to deploy to a linux server, you need to specify the architecture with `--architecture`.
 
@@ -56,7 +56,7 @@ This repository includes cookbooks for deploying and starting a meteor applicati
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Alex J Meyers
+Copyright (c) 2018 Alex J Meyers
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
