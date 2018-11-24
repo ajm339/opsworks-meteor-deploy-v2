@@ -9,6 +9,17 @@
 
 app = search("aws_opsworks_app").first
 
+bash "check npm and node and nvm" do
+  user "ubuntu"
+  cwd "/var/www/#{app['name']}/bundle/programs/server"
+  code <<-EOH
+    npm --version
+    node --version
+    nvm --version
+  EOH
+end
+
+
 bash "install meteor production dependencies" do
   user "ubuntu"
   cwd "/var/www/#{app['name']}/bundle/programs/server"
