@@ -6,7 +6,8 @@ This repository includes cookbooks for deploying and starting a meteor applicati
 
 ###Based on deploying a meteor app after running [`meteor build`](http://guide.meteor.com/deployment.html#custom-deployment).  
 
-~~1. The first cookbook installs node v0.10.45 follwing [this guide](# Following https://github.com/nodesource/distributions#debinstall).  This is necessary with Meteor 1.3.* because the latest version of Meteor needs node v0.10.41 or greater (but not greater v0.10.4x).  Opsworks with Cheff 11 only supports node v0.10.40 as of May 2016, so the node script is needed to upgrade to node v0.10.45.
+<strike>
+1. The first cookbook installs node v0.10.45 follwing [this guide](# Following https://github.com/nodesource/distributions#debinstall).  This is necessary with Meteor 1.3.* because the latest version of Meteor needs node v0.10.41 or greater (but not greater v0.10.4x).  Opsworks with Cheff 11 only supports node v0.10.40 as of May 2016, so the node script is needed to upgrade to node v0.10.45.
   1. This cookbook should be called as `node-v0_10_45` in AWS Opsworks under the Setup series of Chef recipes for the Node.js layer.
 2. The second cookbook installs [foreverjs](https://github.com/foreverjs/forever), the npm module that can start a node application as a daemon.
   1. This cookbook should be called as `foreverjs` in AWS Opsworks under the Setup series of Chef recipes for the Node.js layer.
@@ -35,7 +36,8 @@ This repository includes cookbooks for deploying and starting a meteor applicati
   }
   ```
 6. The sixth cookbook, meteor-undeploy, runs the command necessary to stop the meteor application from running with `forever stopall`.
-  1. This cookbook should be called as `meteor-undeploy` in the Undeploy series of Chef recipes for the Node.js layer.~~
+  1. This cookbook should be called as `meteor-undeploy` in the Undeploy series of Chef recipes for the Node.js layer.
+</strike>
 
 ###This is loosely based on the previous iteration of this hosted here: https://github.com/ajm339/opsworks-meteor-deploy
 
