@@ -39,9 +39,9 @@ This repository includes cookbooks for deploying and starting a meteor applicati
   1. This cookbook should be called as `meteor-undeploy` in the Undeploy series of Chef recipes for the Node.js layer.
 ~~
 
-This is loosely based on the previous iteration of this hosted here: https://github.com/ajm339/opsworks-meteor-deploy
+###This is loosely based on the previous iteration of this hosted here: https://github.com/ajm339/opsworks-meteor-deploy
 
-Will add more documenation soon.
+####Will add more documentation soon.
 
 ###### Note 1: You need to build the application for the proper architecture i.e. if you run the command on an OS X machine, but plan to deploy to a linux server, you need to specify the architecture with `--architecture`.
 
