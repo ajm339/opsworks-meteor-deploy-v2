@@ -8,15 +8,15 @@
 #
 
 execute "Stop Meteor as Node Application" do
-  user "root"
+  user "ubuntu"
   command "forever stopall"
 end
 
 app = search("aws_opsworks_app").first
 
-bash "remove previous version" do 
-  user "root"
-  cwd "/root"
+bash "remove previous version" do
+  user "ubuntu"
+  cwd "/home"
   code <<-EOH
     rm -rf bundle
     rm #{app['name']}.tar.gz

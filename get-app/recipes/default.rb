@@ -11,7 +11,7 @@ app = search("aws_opsworks_app").first
 
 bash "remove previous version" do
   user "ubuntu"
-  cwd "/"
+  cwd "/home"
   ignore_failure true
   code <<-EOH
     forever stopall
@@ -22,7 +22,7 @@ end
 
 bash "get app and unbundle it" do
   user "ubuntu"
-  cwd "/"
+  cwd "/home"
   code <<-EOH
     wget #{app['app_source']['url']}
     tar -zxvf #{app['name']}.tar.gz
