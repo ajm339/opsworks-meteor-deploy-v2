@@ -13,6 +13,8 @@ bash "check npm and node and nvm" do
   user "ubuntu"
   cwd "/var/www/#{app['name']}/bundle/programs/server"
   code <<-EOH
+    echo $USER
+    whoami
     npm --version
     node --version
     nvm --version
