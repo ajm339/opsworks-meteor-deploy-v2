@@ -9,7 +9,7 @@
 
 app = search("aws_opsworks_app").first
 
-bash "check npm and node and nvm" do
+bash "check npm and node" do
   user "ubuntu"
   cwd "/var/www/#{app['name']}/bundle/programs/server"
   code <<-EOH
@@ -17,7 +17,6 @@ bash "check npm and node and nvm" do
     whoami
     npm --version
     node --version
-    nvm --version
   EOH
 end
 
