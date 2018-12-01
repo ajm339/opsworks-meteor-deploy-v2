@@ -10,14 +10,12 @@
 app = search("aws_opsworks_app").first
 
 execute "Stop Meteor as Node Application" do
-  user "ubuntu"
+  user "deploy"
   command "forever stopall"
 end
 
-app = search("aws_opsworks_app").first
-
 bash "remove previous version" do
-  user "ubuntu"
+  user "deploy"
   cwd "/var/www/#{app['name']}"
   code <<-EOH
     rm -rf bundle

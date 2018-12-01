@@ -10,19 +10,19 @@
 app = search("aws_opsworks_app").first
 
 directory "/var/www" do
-  owner 'ubuntu'
+  owner 'deploy'
   mode '0777'
   action :create
 end
 
 directory "/var/www/#{app['name']}" do
-  owner 'ubuntu'
+  owner 'deploy'
   mode '0777'
   action :create
 end
 
 bash "remove previous version" do
-  user "ubuntu"
+  user "deploy"
   cwd "/var/www/#{app['name']}"
   ignore_failure true
   code <<-EOH
@@ -33,7 +33,7 @@ bash "remove previous version" do
 end
 
 bash "get app and unbundle it" do
-  user "ubuntu"
+  user "deploy"
   cwd "/var/www/#{app['name']}"
   code <<-EOH
     wget #{app['app_source']['url']}
