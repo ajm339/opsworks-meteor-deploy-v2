@@ -24,7 +24,7 @@ bash "install meteor production dependencies" do
   user "deploy"
   cwd "/var/www/#{app['name']}/bundle/programs/server"
   code <<-EOH
-    sudo npm install --production
+    npm install --production
   EOH
 end
 
