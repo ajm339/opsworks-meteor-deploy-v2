@@ -11,7 +11,7 @@ app = search("aws_opsworks_app").first
 
 execute "Stop Meteor as Node Application" do
   user "root"
-  command "sudo forever stopall"
+  command "forever stopall"
 end
 
 bash "remove previous version" do
