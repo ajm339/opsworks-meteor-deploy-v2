@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: meteor-undeploy
+# Cookbook Name:: meteor-unroot
 # Recipe:: default
 #
 # Copyright 2016, Alex J Meyers
@@ -10,12 +10,12 @@
 app = search("aws_opsworks_app").first
 
 execute "Stop Meteor as Node Application" do
-  user "deploy"
+  user "root"
   command "sudo forever stopall"
 end
 
 bash "remove previous version" do
-  user "deploy"
+  user "root"
   cwd "/var/www/#{app['name']}"
   code <<-EOH
     rm -rf bundle
