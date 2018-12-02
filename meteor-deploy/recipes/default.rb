@@ -31,5 +31,5 @@ end
 execute "Start Meteor as Node Application" do
 	user "root"
 	cwd "/var/www/#{app['name']}/bundle"
-	command "METEOR_SETTINGS=#{node["METEOR_SETTINGS"]} PORT=#{node["PORT"]} MONGO_URL=#{node["MONGO_URL"]} ROOT_URL=#{node["ROOT_URL"]} MAIL_URL=#{node["MAIL_URL"]} sudo forever start main.js"
+	command "METEOR_SETTINGS=#{node["METEOR_SETTINGS"]} PORT=#{node["PORT"]} MONGO_URL=#{node["MONGO_URL"]} ROOT_URL=#{node["ROOT_URL"]} MAIL_URL=#{node["MAIL_URL"]} forever start main.js"
 end
