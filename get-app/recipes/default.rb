@@ -25,6 +25,7 @@ bash "remove previous version" do
   user "root"
   cwd "/var/www/#{app['name']}"
   ignore_failure true
+  environment 'PATH' => "~/.nvm/versions/node/v8.11.4/bin/:#{ENV['PATH']}"
   code <<-EOH
     forever stopall
     rm -rf bundle
