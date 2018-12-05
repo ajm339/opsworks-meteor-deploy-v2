@@ -24,7 +24,7 @@ bash "install meteor production dependencies" do
   cwd "/var/www/#{app['name']}/bundle/programs/server"
   environment 'PATH' => "~/.nvm/versions/node/v8.11.4/bin/:#{ENV['PATH']}"
   code <<-EOH
-    npm install --production
+    sudo npm install --production
   EOH
 end
 
